@@ -1037,7 +1037,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("003 abc\nxyz\n\n");
+    			t0 = text("005 abc\nxyz\n\n");
     			main = element("main");
     			div = element("div");
     			t1 = space();
