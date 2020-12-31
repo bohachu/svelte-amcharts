@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -412,6 +412,13 @@ var app = (function () {
             dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
         else
             dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
     }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
@@ -1022,72 +1029,130 @@ var app = (function () {
     const file$3 = "src/App.svelte";
 
     function create_fragment$4(ctx) {
-    	let t0;
     	let main;
     	let div;
-    	let t1;
+    	let t0;
     	let script0;
     	let script0_src_value;
     	let script1;
     	let script1_src_value;
     	let script2;
     	let script2_src_value;
+    	let t1;
+    	let button;
+    	let t2;
+    	let t3;
+    	let t4;
+    	let p0;
+    	let t5;
+    	let t6;
+    	let t7;
+    	let t8;
+    	let p1;
+    	let t9;
+    	let t10;
+    	let t11;
+    	let t12;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			t0 = text("007 abc xyz\n");
     			main = element("main");
     			div = element("div");
-    			t1 = space();
+    			t0 = space();
     			script0 = element("script");
     			script1 = element("script");
     			script2 = element("script");
+    			t1 = space();
+    			button = element("button");
+    			t2 = text("Count: ");
+    			t3 = text(/*count*/ ctx[0]);
+    			t4 = space();
+    			p0 = element("p");
+    			t5 = text(/*count*/ ctx[0]);
+    			t6 = text(" * 2 = ");
+    			t7 = text(/*doubled*/ ctx[1]);
+    			t8 = space();
+    			p1 = element("p");
+    			t9 = text(/*doubled*/ ctx[1]);
+    			t10 = text(" * 2 = ");
+    			t11 = text(/*quadrupled*/ ctx[2]);
+    			t12 = text("\n\n010");
     			attr_dev(div, "id", "chartdiv");
     			attr_dev(div, "class", "svelte-1x2mbbl");
-    			add_location(div, file$3, 132, 2, 3144);
+    			add_location(div, file$3, 194, 2, 4272);
     			attr_dev(main, "class", "svelte-1x2mbbl");
-    			add_location(main, file$3, 131, 0, 3135);
+    			add_location(main, file$3, 193, 0, 4263);
     			if (script0.src !== (script0_src_value = "//cdn.amcharts.com/lib/4/core.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 136, 2, 3226);
+    			add_location(script0, file$3, 198, 2, 4354);
     			if (script1.src !== (script1_src_value = "//cdn.amcharts.com/lib/4/charts.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 138, 2, 3317);
+    			add_location(script1, file$3, 200, 2, 4445);
     			if (script2.src !== (script2_src_value = "//cdn.amcharts.com/lib/4/themes/animated.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 140, 2, 3410);
+    			add_location(script2, file$3, 202, 2, 4538);
+    			add_location(button, file$3, 208, 0, 4662);
+    			add_location(p0, file$3, 210, 0, 4720);
+    			add_location(p1, file$3, 211, 0, 4751);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, div);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, t0, anchor);
     			append_dev(document.head, script0);
     			append_dev(document.head, script1);
     			append_dev(document.head, script2);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, button, anchor);
+    			append_dev(button, t2);
+    			append_dev(button, t3);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, p0, anchor);
+    			append_dev(p0, t5);
+    			append_dev(p0, t6);
+    			append_dev(p0, t7);
+    			insert_dev(target, t8, anchor);
+    			insert_dev(target, p1, anchor);
+    			append_dev(p1, t9);
+    			append_dev(p1, t10);
+    			append_dev(p1, t11);
+    			insert_dev(target, t12, anchor);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(script0, "load", /*handleScriptLoaded*/ ctx[0], false, false, false),
-    					listen_dev(script1, "load", /*handleScriptLoaded*/ ctx[0], false, false, false),
-    					listen_dev(script2, "load", /*handleScriptLoaded*/ ctx[0], false, false, false)
+    					listen_dev(script0, "load", /*handleScriptLoaded*/ ctx[3], false, false, false),
+    					listen_dev(script1, "load", /*handleScriptLoaded*/ ctx[3], false, false, false),
+    					listen_dev(script2, "load", /*handleScriptLoaded*/ ctx[3], false, false, false),
+    					listen_dev(button, "click", /*handleClick*/ ctx[4], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*count*/ 1) set_data_dev(t3, /*count*/ ctx[0]);
+    			if (dirty & /*count*/ 1) set_data_dev(t5, /*count*/ ctx[0]);
+    			if (dirty & /*doubled*/ 2) set_data_dev(t7, /*doubled*/ ctx[1]);
+    			if (dirty & /*doubled*/ 2) set_data_dev(t9, /*doubled*/ ctx[1]);
+    			if (dirty & /*quadrupled*/ 4) set_data_dev(t11, /*quadrupled*/ ctx[2]);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t0);
     			detach_dev(script0);
     			detach_dev(script1);
     			detach_dev(script2);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(button);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(t8);
+    			if (detaching) detach_dev(p1);
+    			if (detaching) detach_dev(t12);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -1106,27 +1171,8 @@ var app = (function () {
 
     const num_scripts = 3;
 
-    function amcharts4_ready_handler() {
-    	/**
-     * ---------------------------------------
-     * This demo was created using amCharts 4.
-     *
-     * For more information visit:
-     * https://www.amcharts.com/
-     *
-     * Documentation is available at:
-     * https://www.amcharts.com/docs/v4/
-     * ---------------------------------------
-     */
-    	am4core.useTheme(am4themes_animated);
-
-    	// Create chart instance
-    	var chart = am4core.create("chartdiv", am4charts.XYChart);
-
-    	chart.paddingRight = 30;
-
-    	// Add data
-    	chart.data = [
+    function get_data_001() {
+    	return [
     		{
     			date: new Date(2018, 0, 1),
     			value: 150,
@@ -1170,42 +1216,54 @@ var app = (function () {
     			value3: 600
     		}
     	];
+    }
 
-    	// Create axes
-    	var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-
-    	dateAxis.renderer.grid.template.location = 0;
-    	dateAxis.renderer.minGridDistance = 30;
-    	dateAxis.startLocation = 0.5;
-    	dateAxis.endLocation = 0.5;
-    	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-
-    	// Create series
-    	function createSeries(field, name) {
-    		var series = chart.series.push(new am4charts.LineSeries());
-    		series.dataFields.valueY = field;
-    		series.dataFields.dateX = "date";
-    		series.name = name;
-    		series.tooltipText = "{dateX}: [b]{valueY}[/]";
-    		series.strokeWidth = 2;
-    		series.tensionX = 0.8;
-    		series.stacked = true;
-    		series.fillOpacity = 0.2;
-    		return series;
-    	}
-
-    	var series1 = createSeries("value", "Series #1");
-    	var series2 = createSeries("value2", "Series #2");
-    	var series3 = createSeries("value3", "Series #3");
-    	chart.legend = new am4charts.Legend();
-    	chart.cursor = new am4charts.XYCursor();
-
-    	// Add scrollbar
-    	var scrollbar = new am4charts.XYChartScrollbar();
-
-    	scrollbar.series.push(series1);
-    	chart.scrollbarX = scrollbar;
-    } // end amcharts4_ready_handler
+    function get_data_002() {
+    	return [
+    		{
+    			date: new Date(2018, 0, 1),
+    			value: 999,
+    			value2: 888,
+    			value3: 777
+    		},
+    		{
+    			date: new Date(2018, 0, 2),
+    			value: 666,
+    			value2: 555,
+    			value3: 444
+    		},
+    		{
+    			date: new Date(2018, 0, 3),
+    			value: 700,
+    			value2: 358,
+    			value3: 699
+    		},
+    		{
+    			date: new Date(2018, 0, 4),
+    			value: 490,
+    			value2: 367,
+    			value3: 500
+    		},
+    		{
+    			date: new Date(2018, 0, 5),
+    			value: 500,
+    			value2: 485,
+    			value3: 369
+    		},
+    		{
+    			date: new Date(2018, 0, 6),
+    			value: 550,
+    			value2: 354,
+    			value3: 250
+    		},
+    		{
+    			date: new Date(2018, 0, 7),
+    			value: 420,
+    			value2: 350,
+    			value3: 600
+    		}
+    	];
+    }
 
     function instance$4($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
@@ -1220,6 +1278,73 @@ var app = (function () {
     			console.log("all scripts loaded. load chart");
     			am4core.ready(amcharts4_ready_handler);
     		}
+    	}
+
+    	var chart;
+
+    	function amcharts4_ready_handler() {
+    		/**
+     * ---------------------------------------
+     * This demo was created using amCharts 4.
+     *
+     * For more information visit:
+     * https://www.amcharts.com/
+     *
+     * Documentation is available at:
+     * https://www.amcharts.com/docs/v4/
+     * ---------------------------------------
+     */
+    		am4core.useTheme(am4themes_animated);
+
+    		// Create chart instance
+    		chart = am4core.create("chartdiv", am4charts.XYChart);
+
+    		chart.paddingRight = 30;
+
+    		// Add data
+    		chart.data = get_data_001();
+
+    		// Create axes
+    		var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+
+    		dateAxis.renderer.grid.template.location = 0;
+    		dateAxis.renderer.minGridDistance = 30;
+    		dateAxis.startLocation = 0.5;
+    		dateAxis.endLocation = 0.5;
+    		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    		// Create series
+    		function createSeries(field, name) {
+    			var series = chart.series.push(new am4charts.LineSeries());
+    			series.dataFields.valueY = field;
+    			series.dataFields.dateX = "date";
+    			series.name = name;
+    			series.tooltipText = "{dateX}: [b]{valueY}[/]";
+    			series.strokeWidth = 2;
+    			series.tensionX = 0.8;
+    			series.stacked = true;
+    			series.fillOpacity = 0.2;
+    			return series;
+    		}
+
+    		var series1 = createSeries("value", "Series #1");
+    		var series2 = createSeries("value2", "Series #2");
+    		var series3 = createSeries("value3", "Series #3");
+    		chart.legend = new am4charts.Legend();
+    		chart.cursor = new am4charts.XYCursor();
+
+    		// Add scrollbar
+    		var scrollbar = new am4charts.XYChartScrollbar();
+
+    		scrollbar.series.push(series1);
+    		chart.scrollbarX = scrollbar;
+    	} // end amcharts4_ready_handler
+
+    	let count = 1;
+
+    	function handleClick() {
+    		chart.data = get_data_002();
+    		$$invalidate(0, count += 1);
     	}
 
     	const writable_props = [];
@@ -1237,18 +1362,43 @@ var app = (function () {
     		scripts_loaded,
     		num_scripts,
     		handleScriptLoaded,
-    		amcharts4_ready_handler
+    		get_data_001,
+    		get_data_002,
+    		chart,
+    		amcharts4_ready_handler,
+    		count,
+    		handleClick,
+    		doubled,
+    		quadrupled
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("scripts_loaded" in $$props) scripts_loaded = $$props.scripts_loaded;
+    		if ("chart" in $$props) chart = $$props.chart;
+    		if ("count" in $$props) $$invalidate(0, count = $$props.count);
+    		if ("doubled" in $$props) $$invalidate(1, doubled = $$props.doubled);
+    		if ("quadrupled" in $$props) $$invalidate(2, quadrupled = $$props.quadrupled);
     	};
+
+    	let doubled;
+    	let quadrupled;
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [handleScriptLoaded];
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*count*/ 1) {
+    			// the `$:` means 're-run whenever these values change'
+    			 $$invalidate(1, doubled = count * 2);
+    		}
+
+    		if ($$self.$$.dirty & /*doubled*/ 2) {
+    			 $$invalidate(2, quadrupled = doubled * 2);
+    		}
+    	};
+
+    	return [count, doubled, quadrupled, handleScriptLoaded, handleClick];
     }
 
     class App extends SvelteComponentDev {
