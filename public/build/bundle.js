@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -1037,7 +1037,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("005 abc\nxyz\n\n");
+    			t0 = text("007 abc xyz\n");
     			main = element("main");
     			div = element("div");
     			t1 = space();
@@ -1045,16 +1045,16 @@ var app = (function () {
     			script1 = element("script");
     			script2 = element("script");
     			attr_dev(div, "id", "chartdiv");
-    			attr_dev(div, "class", "svelte-1f9y8k3");
-    			add_location(div, file$3, 4, 1, 21);
-    			attr_dev(main, "class", "svelte-1f9y8k3");
-    			add_location(main, file$3, 3, 0, 13);
+    			attr_dev(div, "class", "svelte-1x2mbbl");
+    			add_location(div, file$3, 132, 2, 3144);
+    			attr_dev(main, "class", "svelte-1x2mbbl");
+    			add_location(main, file$3, 131, 0, 3135);
     			if (script0.src !== (script0_src_value = "//cdn.amcharts.com/lib/4/core.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 20, 2, 236);
+    			add_location(script0, file$3, 136, 2, 3226);
     			if (script1.src !== (script1_src_value = "//cdn.amcharts.com/lib/4/charts.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 21, 2, 324);
+    			add_location(script1, file$3, 138, 2, 3317);
     			if (script2.src !== (script2_src_value = "//cdn.amcharts.com/lib/4/themes/animated.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 22, 2, 414);
+    			add_location(script2, file$3, 140, 2, 3410);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1128,46 +1128,46 @@ var app = (function () {
     	// Add data
     	chart.data = [
     		{
-    			"date": new Date(2018, 0, 1),
-    			"value": 150,
-    			"value2": 162,
-    			"value3": 199
+    			date: new Date(2018, 0, 1),
+    			value: 150,
+    			value2: 162,
+    			value3: 199
     		},
     		{
-    			"date": new Date(2018, 0, 2),
-    			"value": 269,
-    			"value2": 450,
-    			"value3": 841
+    			date: new Date(2018, 0, 2),
+    			value: 269,
+    			value2: 450,
+    			value3: 841
     		},
     		{
-    			"date": new Date(2018, 0, 3),
-    			"value": 700,
-    			"value2": 358,
-    			"value3": 699
+    			date: new Date(2018, 0, 3),
+    			value: 700,
+    			value2: 358,
+    			value3: 699
     		},
     		{
-    			"date": new Date(2018, 0, 4),
-    			"value": 490,
-    			"value2": 367,
-    			"value3": 500
+    			date: new Date(2018, 0, 4),
+    			value: 490,
+    			value2: 367,
+    			value3: 500
     		},
     		{
-    			"date": new Date(2018, 0, 5),
-    			"value": 500,
-    			"value2": 485,
-    			"value3": 369
+    			date: new Date(2018, 0, 5),
+    			value: 500,
+    			value2: 485,
+    			value3: 369
     		},
     		{
-    			"date": new Date(2018, 0, 6),
-    			"value": 550,
-    			"value2": 354,
-    			"value3": 250
+    			date: new Date(2018, 0, 6),
+    			value: 550,
+    			value2: 354,
+    			value3: 250
     		},
     		{
-    			"date": new Date(2018, 0, 7),
-    			"value": 420,
-    			"value2": 350,
-    			"value3": 600
+    			date: new Date(2018, 0, 7),
+    			value: 420,
+    			value2: 350,
+    			value3: 600
     		}
     	];
 
